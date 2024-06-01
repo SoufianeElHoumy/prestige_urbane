@@ -1,0 +1,33 @@
+COLOR_CHOICES = [
+    ('RED', 'Red'),
+    ('GREEN', 'Green'),
+    ('BLUE', 'Blue'),
+    ('YELLOW', 'Yellow'),
+    ('BLACK', 'Black'),
+    ('WHITE', 'White'),
+    ('ORANGE', 'Orange'),
+    ('PURPLE', 'Purple'),
+    ('PINK', 'Pink'),
+    ('BROWN', 'Brown'),
+    ('GRAY', 'Gray'),
+    ('SILVER', 'Silver'),
+    ('GOLD', 'Gold'),
+    ('CYAN', 'Cyan'),
+    ('TURQUOISE', 'Turquoise'),
+    ('MAGENTA', 'Magenta'),
+    ('KHAKI', 'Khaki'),
+    ('CRIMSON', 'Crimson'),
+    ('CORAL', 'Coral'),
+    ('TEAL', 'Teal'),
+    ('NAVY', 'Navy'),
+    ('PEACH', 'Peach'),
+    ('LAVENDER', 'Lavender'),
+    ('SAGE', 'Sage'),
+    ('MINT', 'Mint'),
+    ('CREAM', 'Cream'),
+]
+
+GENDER_CHOICES = [
+    ('MALE', 'Male'),
+    ('FEMALE', 'Female'),
+]
