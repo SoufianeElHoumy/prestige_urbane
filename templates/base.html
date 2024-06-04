@@ -13,9 +13,13 @@
 
 </head>
 <body class="light">
-        {% include 'navbar.html' %}
-        <footer class="footer fixed-footer">
-            {% include 'footer.html' %}
-        </footer>
+    {% include 'navbar.html' %}
+    
+    {% block content %}
+    {% endblock %}
+    
+    <footer class="footer fixed-footer">
+        {% include 'footer.html' %}
+    </footer>
 </body>
 </html>

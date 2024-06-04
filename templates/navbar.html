@@ -9,7 +9,9 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-custom navbar-mainbg">
-        <a class="navbar-brand navbar-logo" href="#">Prestige Urbane</a>
+        <a class="navbar-brand navbar-logo" href="#">
+            <img src="{% static 'image/logo1.png' %}" alt="Your Website Logo">
+        </a>
         <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars text-white"></i>
         </button>
@@ -19,19 +21,19 @@
                     <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i>Home</a>
+                    <a class="{% url 'home' %}" href="#home"><i class="fas fa-tachometer-alt"></i>Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="far fa-address-book"></i>Services</a>
+                    <a class="{% url 'Services' %}"" href="#services"><i class="far fa-address-book"></i>Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-clone"></i>Pricing</a>
+                    <a class="{% url 'Pricing' %}" href="#pricing"><i class="far fa-clone"></i>Pricing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="far fa-calendar-alt"></i>About</a>
+                    <a class="{% url 'About' %}" href="#about"><i class="far fa-calendar-alt"></i>About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Contact</a>
+                    <a class="{% url 'Contact' %}" href="#contact"><i class="far fa-chart-bar"></i>Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
