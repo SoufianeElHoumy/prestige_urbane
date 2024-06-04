@@ -1,78 +1,51 @@
-// ---------Responsive-navbar-active-animation-----------
-function test(){
-	var tabsNewAnim = $('#navbarSupportedContent');
-	var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
-	var activeItemNewAnim = tabsNewAnim.find('.active');
-	var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
-	var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
-	var itemPosNewAnimTop = activeItemNewAnim.position();
-	var itemPosNewAnimLeft = activeItemNewAnim.position();
-	$(".hori-selector").css({
-		"top":itemPosNewAnimTop.top + "px", 
-		"left":itemPosNewAnimLeft.left + "px",
-		"height": activeWidthNewAnimHeight + "px",
-		"width": activeWidthNewAnimWidth + "px"
-	});
-	$("#navbarSupportedContent").on("click","li",function(e){
-		$('#navbarSupportedContent ul li').removeClass("active");
-		$(this).addClass('active');
-		var activeWidthNewAnimHeight = $(this).innerHeight();
-		var activeWidthNewAnimWidth = $(this).innerWidth();
-		var itemPosNewAnimTop = $(this).position();
-		var itemPosNewAnimLeft = $(this).position();
-		$(".hori-selector").css({
-			"top":itemPosNewAnimTop.top + "px", 
-			"left":itemPosNewAnimLeft.left + "px",
-			"height": activeWidthNewAnimHeight + "px",
-			"width": activeWidthNewAnimWidth + "px"
+
+
+/* Please ❤ this if you like it! */
+
+
+(function($) { "use strict";
+
+	$(function() {
+		var header = $(".start-style");
+		$(window).scroll(function() {    
+			var scroll = $(window).scrollTop();
+		
+			if (scroll >= 10) {
+				header.removeClass('start-style').addClass("scroll-on");
+			} else {
+				header.removeClass("scroll-on").addClass('start-style');
+			}
 		});
+	});		
+		
+	//Animation
+	
+	$(document).ready(function() {
+		$('body.hero-anime').removeClass('hero-anime');
 	});
-}
-$(document).ready(function(){
-	setTimeout(function(){ test(); });
-});
-$(window).on('resize', function(){
-	setTimeout(function(){ test(); }, 500);
-});
-$(".navbar-toggler").click(function(){
-	$(".navbar-collapse").slideToggle(300);
-	setTimeout(function(){ test(); });
-});
 
-
-
-// --------------add active class-on another-page move----------
-jQuery(document).ready(function($){
-	// Get current path and find target link
-	var path = window.location.pathname.split("/").pop();
-
-	// Account for home page with empty path
-	if ( path == '' ) {
-		path = 'index.html';
-	}
-
-	var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
-	// Add active class to target link
-	target.parent().addClass('active');
-});
-
-
-
-
-// Add active class on another page linked
-// ==========================================
-// $(window).on('load',function () {
-//     var current = location.pathname;
-//     console.log(current);
-//     $('#navbarSupportedContent ul li a').each(function(){
-//         var $this = $(this);
-//         // if the current path is like this link, make it active
-//         if($this.attr('href').indexOf(current) !== -1){
-//             $this.parent().addClass('active');
-//             $this.parents('.menu-submenu').addClass('show-dropdown');
-//             $this.parents('.menu-submenu').parent().addClass('active');
-//         }else{
-//             $this.parent().removeClass('active');
-//         }
-//     })
-// });
+	//Menu On Hover
+		
+	$('body').on('mouseenter mouseleave','.nav-item',function(e){
+			if ($(window).width() > 750) {
+				var _d=$(e.target).closest('.nav-item');_d.addClass('show');
+				setTimeout(function(){
+				_d[_d.is(':hover')?'addClass':'removeClass']('show');
+				},1);
+			}
+	});	
+	
+	//Switch light/dark
+	
+	$("#switch").on('click', function () {
+		if ($("body").hasClass("dark")) {
+			$("body").removeClass("dark");
+			$("#switch").removeClass("switched");
+		}
+		else {
+			$("body").addClass("dark");
+			$("#switch").addClass("switched");
+		}
+	});  
+	
+  })(jQuery); 
