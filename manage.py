@@ -2,9 +2,12 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from colorama import Fore, Style
+import time 
 
-
+from django.contrib.auth import get_user_model
 def main():
+   
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'prestige_urbane.settings')
     try:
