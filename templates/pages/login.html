@@ -114,8 +114,8 @@
                         <div class="main-menu">
                             <div class="menu-left">
                                 <div class="brand-logo">
-                                    <a href="index.htm">
-                                        <img src="{% static 'images/logo.png' %}" class="h-logo img-fluid blur-up lazyload"
+                                    <a href="{% url 'index' %}">
+                                        <img src="{% static 'images/1.png' %}" class="h-logo img-fluid blur-up lazyload"
                                             alt="logo">
                                     </a>
                                 </div>
@@ -136,9 +136,12 @@
                                                 </div>
                                             </li>
                                             <li><a href="{% url 'index' %}" class="nav-link menu-title">Home</a></li>
+                                            <li><a href="{% url 'shop' %}" class="nav-link menu-title">Shop</a></li>
+                                            <li><a href="cart/list.html" class="nav-link menu-title">Cart</a></li>
                                             <li><a href="{% url 'about' %}" class="nav-link menu-title">About Us</a></li>
-                                            <li><a href="{% url 'contact' %}" class="nav-link menu-title">Contact Us</a></li>
-                                            <li><a href="{% url 'blog' %}" class="nav-link menu-title">Blog</a></li>
+                                            <li><a href="{% url 'contact' %}" class="nav-link menu-title">Contact Us</a>
+                                            </li>
+                                            <li><a href="blog.html" class="nav-link menu-title">Blog</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -176,9 +179,8 @@
                                         </div>
                                         <div class="onhover-div profile-dropdown">
                                             <ul>
-                                
                                                 <li>
-                                                    <a href=" {% url 'register' %} " class="d-block">Sign Up</a>
+                                                    <a href="{% url 'register' %}" class="d-block">Sign Up</a>
                                                 </li>
 
                                             </ul>
@@ -343,8 +345,8 @@
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="footer-contact">
                             <div class="brand-logo">
-                                <a href="index.htm" class="footer-logo float-start">
-                                    <img src="{% static 'images/logo.png' %}" class="f-logo img-fluid blur-up lazyload"
+                                <a href="{% url 'index' %}" class="footer-logo float-start">
+                                    <img src="{% static 'images/1.png' %}" class="f-logo img-fluid blur-up lazyload image-resize"
                                         alt="logo">
                                 </a>
                             </div>
@@ -357,7 +359,7 @@
                                             India</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Email:</b><span class="font-light"> contact@surfsidemedia.in</span></span>
+                                    <span><b>Email:</b><span class="font-light"> contact@Prestige Urbane.in</span></span>
                                 </li>
                             </ul>
                         </div>
@@ -370,19 +372,19 @@
                             <div class="footer-content">
                                 <ul>
                                     <li>
-                                        <a href="index.htm" class="font-dark">Home</a>
+                                        <a href="{% url 'index' %}" class="font-dark">Home</a>
                                     </li>
                                     <li>
-                                        <a href="shop.html" class="font-dark">Shop</a>
+                                        <a href="{% url 'shop' %}" class="font-dark">Shop</a>
                                     </li>
                                     <li>
-                                        <a href="about-us.html" class="font-dark">About Us</a>
+                                        <a href="{% url 'about' %}" class="font-dark">About Us</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="font-dark">Blog</a>
+                                        <a href="blog.html" class="font-dark">Blog</a>
                                     </li>
                                     <li>
-                                        <a href="contact-us.html" class="font-dark">Contact</a>
+                                        <a href="{% url 'contact' %}" class="font-dark">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -396,19 +398,19 @@
                             <div class="footer-content">
                                 <ul>
                                     <li>
-                                        <a href="shop.html" class="font-dark">Latest Shoes</a>
+                                        <a href="{% url 'shop' %}" class="font-dark">Latest Shoes</a>
                                     </li>
                                     <li>
-                                        <a href="shop.html" class="font-dark">Branded Jeans</a>
+                                        <a href="{% url 'shop' %}" class="font-dark">Branded Jeans</a>
                                     </li>
                                     <li>
-                                        <a href="shop.html" class="font-dark">New Jackets</a>
+                                        <a href="{% url 'shop' %}" class="font-dark">New Jackets</a>
                                     </li>
                                     <li>
-                                        <a href="shop.html" class="font-dark">Colorfull Hoodies</a>
+                                        <a href="{% url 'shop' %}" class="font-dark">Colorfull Hoodies</a>
                                     </li>
                                     <li>
-                                        <a href="shop.html" class="font-dark">Shiner Goggles</a>
+                                        <a href="{% url 'shop' %}" class="font-dark">Shiner Goggles</a>
                                     </li>
                                 </ul>
                             </div>
@@ -457,6 +459,7 @@
                 </div>
             </div>
         </div>
+
         <div class="sub-footer">
             <div class="container">
                 <div class="row gy-3">
@@ -497,36 +500,8 @@
             </div>
         </div>
     </div>
-</div>
+
     </footer>
-    <div class="modal fade newletter-modal" id="newsletter">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content ">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-                    <img src="{% static 'images/newletter-icon.png' %}" class="img-fluid blur-up lazyload" alt="">
-                    <div class="modal-title">
-                        <h2 class="tt-title">Sign up for our Newsletter!</h2>
-                        <p class="font-light">Never miss any new updates or products we reveal, stay up to date.</p>
-                        <p class="font-light">Oh, and it's free!</p>
-
-                        <div class="input-group mb-3">
-                            <input placeholder="Email" class="form-control" type="text">
-                        </div>
-
-                        <div class="cancel-button text-center">
-                            <button class="btn default-theme w-100" data-bs-dismiss="modal"
-                                type="button">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade cart-modal" id="addtocart" tabindex="-1" role="dialog" aria-label="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">

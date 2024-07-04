@@ -20,7 +20,7 @@
     <meta name="author" content="Surfside Media">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <title>SurfsideMedia</title>
+    <title>Prestige Urbane</title>
 
     <link id="rtl-link" rel="stylesheet" type="text/css" href="{% static 'css/vendors/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/vendors/ion.rangeSlider.min.css' %}">
@@ -113,7 +113,7 @@
                         <div class="main-menu nav-background">
                             <div class="menu-left">
                                 <div class="brand-logo">
-                                    <a href="index.htm">
+                                    <a href="{% url 'index' %}">
                                         <img src="{% static 'images/1.png' %}" class="h-logo img-fluid blur-up lazyload"
                                             alt="logo">
                                     </a>
@@ -353,7 +353,7 @@
                                 </div>
                                 <div class="contact-title">
                                     <h4>Email Address :</h4>
-                                    <p>contact@surfsidemedia.in</p>
+                                    <p>contact@Prestige Urbane.in</p>
                                 </div>
                             </div>
                         </div>
@@ -371,7 +371,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="footer-contact">
                             <div class="brand-logo">
-                                <a href="index.htm" class="footer-logo float-start">
+                                <a href="{% url 'index' %}" class="footer-logo float-start">
                                     <img src="{% static 'images/1.png' %}" class="f-logo img-fluid blur-up lazyload image-resize"
                                         alt="logo">
                                 </a>
@@ -385,7 +385,7 @@
                                             India</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Email:</b><span class="font-light"> contact@surfsidemedia.in</span></span>
+                                    <span><b>Email:</b><span class="font-light"> contact@Prestige Urbane.in</span></span>
                                 </li>
                             </ul>
                         </div>
@@ -398,7 +398,7 @@
                             <div class="footer-content">
                                 <ul>
                                     <li>
-                                        <a href="index.htm" class="font-dark">Home</a>
+                                        <a href="{% url 'index' %}" class="font-dark">Home</a>
                                     </li>
                                     <li>
                                         <a href="shop.html" class="font-dark">Shop</a>

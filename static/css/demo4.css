@@ -5086,8 +5086,8 @@ header .main-navbar {
     .product-box .img-wrapper.hover-image::after {
       content: "";
       position: absolute;
-      width: 100%;
-      height: 100%;
+      width: 50%;
+      height: 50%;
       background-image: url(../images/vegetable/effect1.png);
       background-size: cover;
       background-repeat: no-repeat;

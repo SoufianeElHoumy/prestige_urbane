@@ -21,7 +21,7 @@
     <meta name="author" content="Surfside Media">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <title>SurfsideMedia</title>
+    <title>Prestige Urbane</title>
 
     <link id="rtl-link" rel="stylesheet" type="text/css" href="{% static 'css/vendors/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/vendors/ion.rangeSlider.min.css' %}">
@@ -111,107 +111,110 @@
             }
         }
     </style>
-    <header class="header-style-2" id="home">
-        <div class="main-header navbar-searchbar">
-            <div class="container-fluid-lg">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="main-menu">
-                            <div class="menu-left">
-                                <div class="brand-logo">
-                                    <a href="/">
-                                        <img src="{% static 'images/logo.png' %}" class="h-logo img-fluid blur-up lazyload"
-                                            alt="logo">
-                                    </a>
-                                </div>
-
-                            </div>
-                            <nav>
-                                <div class="main-navbar">
-                                    <div id="mainnav">
-                                        <div class="toggle-nav">
-                                            <i class="fa fa-bars sidebar-bar"></i>
-                                        </div>
-                                        <ul class="nav-menu">
-                                            <li class="back-btn d-xl-none">
-                                                <div class="close-btn">
-                                                    Menu
-                                                    <span class="mobile-back"><i class="fa fa-angle-left"></i>
-                                                    </span>
-                                                </div>
-                                            </li>
-                                            <li><a href="{% url 'index' %}" class="nav-link menu-title">Home</a></li>
-                                            <li><a href="{% url 'about' %}" class="nav-link menu-title">About Us</a></li>
-                                            <li><a href="{% url 'contact' %}" class="nav-link menu-title">Contact Us</a></li>
-                                            <li><a href="{% url 'blog' %}" class="nav-link menu-title">Blog</a></li>
-                                        </ul>
+    <div class="nav-bar-color">
+        <header class="header-style-2" id="home">
+            <div class="main-header navbar-searchbar">
+                <div class="container-fluid-lg">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main-menu nav-background">
+                                <div class="menu-left">
+                                    <div class="brand-logo">
+                                        <a href="{% url 'index' %}">
+                                            <img src="{% static 'images/1.png' %}" class="h-logo img-fluid blur-up lazyload"
+                                                alt="logo">
+                                        </a>
                                     </div>
+    
                                 </div>
-                            </nav>
-                            <div class="menu-right">
-                                <ul>
-                                    <li>
-                                        <div class="search-box theme-bg-color">
-                                            <i data-feather="search"></i>
-                                        </div>
-                                    </li>
-                                    <li class="onhover-dropdown wislist-dropdown">
-                                        <div class="cart-media">
-                                            <a href="wishlist/list">
-                                                <i data-feather="heart"></i>
-                                                <span id="wishlist-count" class="label label-theme rounded-pill">
-                                                    0
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="onhover-dropdown wislist-dropdown">
-                                        <div class="cart-media">
-                                            <a href="cart/list">
-                                                <i data-feather="shopping-cart"></i>
-                                                <span id="cart-count" class="label label-theme rounded-pill">
-                                                    0
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="onhover-dropdown">
-                                        <div class="cart-media name-usr">
-                                            <i data-feather="user"></i>
-                                        </div>
-                                        <div class="onhover-div profile-dropdown">
-                                            <ul>
-                                                <li>
-                                                    <a href="login" class="d-block">Login</a>
+                                <nav>
+                                    <div class="main-navbar">
+                                        <div id="mainnav">
+                                            <div class="toggle-nav">
+                                                <i class="fa fa-bars sidebar-bar"></i>
+                                            </div>
+                                            <ul class="nav-menu">
+                                                <li class="back-btn d-xl-none">
+                                                    <div class="close-btn">
+                                                        Menu
+                                                        <span class="mobile-back"><i class="fa fa-angle-left"></i>
+                                                        </span>
+                                                    </div>
                                                 </li>
-                                                <li>
-                                                    <a href="register" class="d-block">Register</a>
-                                                </li>
-
+                                                <li><a href="{% url 'index' %}" class="nav-link menu-title">Home</a></li>
+                                                <li><a href="{% url 'index' %}" class="nav-link menu-title">New Arrival</a></li>
+                                                <li><a href="{% url 'index' %}" class="nav-link menu-title">Man </a></li>
+                                                <li><a href="{% url 'index' %}" class="nav-link menu-title">Women </a></li>
+                                                <li><a href="{% url 'about' %}" class="nav-link menu-title">About Us</a></li>
+                                                <li><a href="{% url 'contact' %}" class="nav-link menu-title">Contact Us</a></li>
+                                                <li><a href="{% url 'blog' %}" class="nav-link menu-title">Blog</a></li>
                                             </ul>
                                         </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="search-full">
-                                <form method="GET" class="search-full" action="search">
-                                    <div class="input-group">
-                                        <span class="input-group-text">
-                                            <i data-feather="search" class="font-light"></i>
-                                        </span>
-                                        <input type="text" name="q" class="form-control search-type"
-                                            placeholder="Search here..">
-                                        <span class="input-group-text close-search">
-                                            <i data-feather="x" class="font-light"></i>
-                                        </span>
                                     </div>
-                                </form>
+                                </nav>
+                                <div class="menu-right">
+                                    <ul>
+                                        <li>
+                                            <div class="search-box theme-bg-color">
+                                                <i data-feather="search"></i>
+                                            </div>
+                                        </li>
+                                        <li class="onhover-dropdown wislist-dropdown">
+                                            <div class="cart-media">
+                                                <a href="{% url 'wishlist' %}">
+                                                    <i data-feather="heart"></i>
+                                                    <span id="wishlist-count" class="label label-theme rounded-pill">
+                                                        1
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="onhover-dropdown wislist-dropdown">
+                                            <div class="cart-media">
+                                                <a href="{% url 'list' %}">
+                                                    <i data-feather="shopping-cart"></i>
+                                                    <span id="cart-count" class="label label-theme rounded-pill">
+                                                        2
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="onhover-dropdown">
+                                            <div class="cart-media name-usr">
+                                                <i data-feather="user"></i>
+                                            </div>
+                                            <div class="onhover-div profile-dropdown">
+                                                <ul>
+                                                    <li>
+                                                        <a href="{% url 'login' %}" class="d-block">Login</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{% url 'register' %}" class="d-block">Sign Up</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="search-full">
+                                    <form method="GET" class="search-full" action="http://localhost:8000/search">
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                <i data-feather="search" class="font-light"></i>
+                                            </span>
+                                            <input type="text" name="q" class="form-control search-type"
+                                                placeholder="Search here..">
+                                            <span class="input-group-text close-search">
+                                                <i data-feather="x" class="font-light"></i>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </header>
 
     <div class="mobile-menu d-sm-none">
@@ -324,7 +327,17 @@
                             <div class="col-md-3">
                                 <label for="country" class="form-label">Country</label>
                                 <select class="form-select custome-form-select" id="country" name="country">
-                                    <option>India</option>
+                                    <option>Choose...</option>
+                                    <option>Morocco</option>
+                                    <option>Portugal</option>
+                                    <option>Spain</option>
+                                    <option>France</option>
+                                    <option>Germany</option>
+                                    <option>Italy</option>
+                                    <option>Belgaria</option>
+                                    <option>USA</option>
+                                    <option>UK</option>
+                                    <option>others</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please select a valid country.
@@ -416,7 +429,17 @@
                             <div class="col-md-3">
                                 <label for="country" class="form-label">Country</label>
                                 <select class="form-select custome-form-select" id="s_country" name="s_country">
-                                    <option>India</option>
+                                    <option>Choose...</option>
+                                    <option>Morocco</option>
+                                    <option>Portugal</option>
+                                    <option>Spain</option>
+                                    <option>France</option>
+                                    <option>Germany</option>
+                                    <option>Italy</option>
+                                    <option>Belgaria</option>
+                                    <option>USA</option>
+                                    <option>UK</option>
+                                    <option>others</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
@@ -554,21 +577,21 @@
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="footer-contact">
                             <div class="brand-logo">
-                                <a href="/" class="footer-logo float-start">
-                                    <img src="{% static 'images/logo.png' %}" class="f-logo img-fluid blur-up lazyload"
+                                <a href="{% url 'index' %}" class="footer-logo float-start">
+                                    <img src="{% static 'images/1.png' %}" class="f-logo img-fluid blur-up lazyload image-resize"
                                         alt="logo">
                                 </a>
                             </div>
                             <ul class="contact-lists" style="clear:both;">
                                 <li>
-                                    <span><b>phone:</b> <span class="font-light"> +1 0000000000</span></span>
+                                    <span><b>phone:</b> <span class="font-light"> +212 0000000000</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Address:</b><span class="font-light"> NIT, Faridabad, Haryana,
-                                            India</span></span>
+                                    <span><b>Address:</b><span class="font-light"> Casablenca,
+                                            Morocco</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Email:</b><span class="font-light"> contact@surfsidemedia.in</span></span>
+                                    <span><b>Email:</b><span class="font-light"> contact@PrestigeUrbane.ma</span></span>
                                 </li>
                             </ul>
                         </div>
@@ -581,19 +604,19 @@
                             <div class="footer-content">
                                 <ul>
                                     <li>
-                                        <a href="/" class="font-dark">Home</a>
+                                        <a href="{% url 'index' %}" class="font-dark">Home</a>
                                     </li>
                                     <li>
-                                        <a href="shop" class="font-dark">Shop</a>
+                                        <a href="{% url 'shop' %}" class="font-dark">Shop</a>
                                     </li>
                                     <li>
-                                        <a href="about-us" class="font-dark">About Us</a>
+                                        <a href="{% url 'about' %}" class="font-dark">About Us</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="font-dark">Blog</a>
+                                        <a href="blog.html" class="font-dark">Blog</a>
                                     </li>
                                     <li>
-                                        <a href="contact-us" class="font-dark">Contact</a>
+                                        <a href="{% url 'contact' %}" class="font-dark">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -607,19 +630,19 @@
                             <div class="footer-content">
                                 <ul>
                                     <li>
-                                        <a href="shop" class="font-dark">Latest Shoes</a>
+                                        <a href="shop.html" class="font-dark">Latest Shoes</a>
                                     </li>
                                     <li>
-                                        <a href="shop" class="font-dark">Branded Jeans</a>
+                                        <a href="shop.html" class="font-dark">Branded Jeans</a>
                                     </li>
                                     <li>
-                                        <a href="shop" class="font-dark">New Jackets</a>
+                                        <a href="shop.html" class="font-dark">New Jackets</a>
                                     </li>
                                     <li>
-                                        <a href="shop" class="font-dark">Colorfull Hoodies</a>
+                                        <a href="shop.html" class="font-dark">Colorfull Hoodies</a>
                                     </li>
                                     <li>
-                                        <a href="shop" class="font-dark">Shiner Goggles</a>
+                                        <a href="shop.html" class="font-dark">Shiner Goggles</a>
                                     </li>
                                 </ul>
                             </div>
@@ -668,44 +691,47 @@
                 </div>
             </div>
         </div>
+        
         <div class="sub-footer">
             <div class="container">
                 <div class="row gy-3">
                     <div class="col-md-6">
-                        <ul>
-                            <li class="font-dark">We accept:</li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <img src="{% static 'images/payment-icon/1.jpg' %}" class="img-fluid blur-up lazyload"
-                                        alt="payment icon">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <img src="{% static 'images/payment-icon/2.jpg' %}" class="img-fluid blur-up lazyload"
-                                        alt="payment icon">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <img src="{% static 'images/payment-icon/3.jpg' %}" class="img-fluid blur-up lazyload"
-                                        alt="payment icon">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <img src="{% static 'images/payment-icon/4.jpg' %}" class="img-fluid blur-up lazyload"
-                                        alt="payment icon">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <p class="mb-0 font-dark">© 2023, Surfside Media.</p>
+                            <ul>
+                                <li>
+                                    <a href="#" class="font-dark">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="font-dark">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="font-dark">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="font-dark">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="font-dark">
+                                        <i class="fab fa-pinterest-p"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                        <p class="mb-0 font-dark">© Copyright 2024, All Rights Reserved by Prestige Urbane</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </footer>
     <div class="modal fade newletter-modal" id="newsletter">
         <div class="modal-dialog modal-dialog-centered">

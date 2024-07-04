@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+    
 
 <head>
     {% load static %}
@@ -29,24 +30,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/vendors/animate.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/vendors/slick/slick.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/vendors/slick/slick-theme.css' %}">
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-    <link rel="stylesheet" href="{% static 'css/demo2.css' %}">
-    <link rel="stylesheet" href="{% static 'css/demo4.css' %}">
-    <style>
-        .h-logo {
-            max-width: 185px !important;
-        }
-
-        .f-logo {
-            max-width: 220px !important;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .h-logo {
-                max-width: 110px !important;
-            }
-        }
-    </style>
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'css/demo2.css' %}">
     <link rel="stylesheet" href="{% static 'css/demo4.css' %}">
@@ -118,7 +101,7 @@
                         <div class="main-menu nav-background">
                             <div class="menu-left">
                                 <div class="brand-logo">
-                                    <a href="index.htm">
+                                    <a href="{% url 'index' %}">
                                         <img src="{% static 'images/1.png' %}" class="h-logo img-fluid blur-up lazyload"
                                             alt="logo">
                                     </a>
@@ -140,12 +123,10 @@
                                                 </div>
                                             </li>
                                             <li><a href="{% url 'index' %}" class="nav-link menu-title">Home</a></li>
-                                            <li><a href="{% url 'index' %}" class="nav-link menu-title">New Arrival</a></li>
-                                            <li><a href="{% url 'index' %}" class="nav-link menu-title">Man </a></li>
-                                            <li><a href="{% url 'index' %}" class="nav-link menu-title">Women </a></li>
+                                            <li><a href="{% url 'shop' %}" class="nav-link menu-title">Shop</a></li>
+                                            <li><a href="{% url 'list' %}" class="nav-link menu-title">cart</a></li>
                                             <li><a href="{% url 'about' %}" class="nav-link menu-title">About Us</a></li>
                                             <li><a href="{% url 'contact' %}" class="nav-link menu-title">Contact Us</a></li>
-                                            <li><a href="{% url 'blog' %}" class="nav-link menu-title">Blog</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -159,20 +140,20 @@
                                     </li>
                                     <li class="onhover-dropdown wislist-dropdown">
                                         <div class="cart-media">
-                                            <a href="wishlist/list.html">
+                                            <a href="{% url 'wishlist' %}">
                                                 <i data-feather="heart"></i>
                                                 <span id="wishlist-count" class="label label-theme rounded-pill">
-                                                    0
+                                                    1
                                                 </span>
                                             </a>
                                         </div>
                                     </li>
                                     <li class="onhover-dropdown wislist-dropdown">
                                         <div class="cart-media">
-                                            <a href="cart/list.html">
+                                            <a href="{% url 'list' %}">
                                                 <i data-feather="shopping-cart"></i>
                                                 <span id="cart-count" class="label label-theme rounded-pill">
-                                                    0
+                                                    2
                                                 </span>
                                             </a>
                                         </div>
@@ -280,72 +261,6 @@
                 </div>
             </div>
         </div>
-    <!--
-    <section class="pt-0 poster-section">
-        <div class="poster-image slider-for custome-arrow classic-arrow">
-            <div>
-                <img src="{% static 'images/furniture-images/poster/1.png' %}" class="img-fluid blur-up lazyload" alt="">
-            </div>
-            <div>
-                <img src="{% static 'images/furniture-images/poster/2.png' %}" class="img-fluid blur-up lazyload" alt="">
-            </div>
-            <div>
-                <img src="{% static 'images/furniture-images/poster/3.png' %}" class="img-fluid blur-up lazyload" alt="">
-            </div>
-        </div>
-        <div class="slider-nav image-show">
-            <div>
-                <div class="poster-img">
-                    <img src="{% static 'images/furniture-images/poster/t2.jpg' %}" class="img-fluid blur-up lazyload" alt="">
-                    <div class="overlay-color">
-                        <i class="fas fa-plus theme-color"></i>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="poster-img">
-                    <img src="{% static 'images/furniture-images/poster/t1.jpg' %}" class="img-fluid blur-up lazyload" alt="">
-                    <div class="overlay-color">
-                        <i class="fas fa-plus theme-color"></i>
-                    </div>
-                </div>
-
-            </div>
-            <div>
-                <div class="poster-img">
-                    <img src="{% static 'images/furniture-images/poster/t3.jpg' %}" class="img-fluid blur-up lazyload" alt="">
-                    <div class="overlay-color">
-                        <i class="fas fa-plus theme-color"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="left-side-contain">
-            <div class="banner-left">
-                <h4>Sale <span class="theme-color">35% Off</span></h4>
-                <h1>New Latest <span>Dresses</span></h1>
-                <p>BUY ONE GET ONE <span class="theme-color">FREE</span></p>
-                <h2>$79.00 <span class="theme-color"><del>$65.00</del></span></h2>
-                <p class="poster-details mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting
-                    industry.</p>
-            </div>
-        </div>
-
-        <div class="right-side-contain">
-            <div class="social-image">
-                <h6>Facebook</h6>
-            </div>
-
-            <div class="social-image">
-                <h6>Instagram</h6>
-            </div>
-
-            <div class="social-image">
-                <h6>Twitter</h6>
-            </div>
-        </div>
-    -->
     </section>
     <!-- banner section start -->
     <section class="ratio2_1 banner-style-2">
@@ -353,7 +268,7 @@
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="collection-banner p-bottom p-center text-center">
-                        <a href="shop-left-sidebar.html" class="banner-img">
+                        <a href="{% url 'category' 'jeans' %}" class="banner-img">
                             <img src="{% static 'images/fashion/banner/1.jpg' %}" class="bg-img blur-up lazyload" alt="">
                         </a>
                         <div class="banner-detail">
@@ -362,17 +277,17 @@
                             </a>
                             <span class="font-dark-30">26% <span>OFF</span></span>
                         </div>
-                        <a href="shop-left-sidebar.html" class="contain-banner">
+                        <a href="{% url 'category' 'jeans' %}" class="contain-banner">
                             <div class="banner-content with-big">
-                                <h2 class="mb-2">New Hoodie</h2>
-                                <span>BUY ONE GET ONE FREE</span>
+                                <h2 class="mb-2">Jeans</h2>
+                                <span>New offer 50% off</span>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="collection-banner p-bottom p-center text-center">
-                        <a href="shop-left-sidebar.html" class="banner-img">
+                        <a href="{% url 'category' 'T-shirts' %}" class="banner-img">
                             <img src="{% static 'images/fashion/banner/2.jpg' %}" class="bg-img blur-up lazyload" alt="">
                         </a>
                         <div class="banner-detail">
@@ -381,17 +296,17 @@
                             </a>
                             <span class="font-dark-30">50% <span>OFF</span></span>
                         </div>
-                        <a href="shop-left-sidebar.html" class="contain-banner">
+                        <a href="{% url 'category' 'T-shirts' %}" class="contain-banner">
                             <div class="banner-content with-big">
-                                <h2 class="mb-2">Women Fashion</h2>
-                                <span>New offer 50% off</span>
+                                <h2 class="mb-2">T-Shirts</h2>
+                                <span>BUY ONE GET ONE FREE</span>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="collection-banner p-bottom p-center text-center">
-                        <a href="shop-left-sidebar.html" class="banner-img">
+                        <a href="{% url 'category' 'jackets' %}" class="banner-img">
                             <img src="{% static 'images/fashion/banner/3.jpg' %}" class="bg-img blur-up lazyload" alt="">
                         </a>
                         <div class="banner-detail">
@@ -400,10 +315,10 @@
                             </a>
                             <span class="font-dark-30">36% <span>OFF</span></span>
                         </div>
-                        <a href="shop-left-sidebar.html" class="contain-banner">
+                        <a href="{% url 'category' 'jackets' %}" class="contain-banner">
                             <div class="banner-content with-big">
-                                <h2 class="mb-2">New Jacket</h2>
-                                <span>BUY ONE GET ONE FREE</span>
+                                <h2 class="mb-2">Jackets</h2>
+                                <span>New offer 25% off</span>
                             </div>
                         </a>
                     </div>
@@ -1264,7 +1179,7 @@
                 <div class="col-xxl-10 col-lg-9">
                     <div class="category-wrapper category-slider1 white-arrow category-arrow">
                         <div>
-                            <a href="shop-left-sidebar.html" class="category-wrap category-padding">
+                            <a href="#" class="category-wrap category-padding">
                                 <img src="{% static 'images/fashion/category/1.jpg' %}" class="bg-img blur-up lazyload"
                                     alt="category image">
                                 <div class="category-content category-text-1">
@@ -1274,7 +1189,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="shop-left-sidebar.html" class="category-wrap category-padding">
+                            <a href="#" class="category-wrap category-padding">
                                 <img src="{% static 'images/fashion/category/2.jpg' %}" class="bg-img blur-up lazyload"
                                     alt="category image">
                                 <div class="category-content category-text-1">
@@ -1284,7 +1199,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="shop-left-sidebar.html" class="category-wrap category-padding">
+                            <a href="#" class="category-wrap category-padding">
                                 <img src="{% static 'images/fashion/category/3.jpg' %}" class="bg-img blur-up lazyload"
                                     alt="category image">
                                 <div class="category-content category-text-1">
@@ -1294,7 +1209,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="shop-left-sidebar.html" class="category-wrap category-padding">
+                            <a href="#" class="category-wrap category-padding">
                                 <img src="{% static 'images/fashion/category/4.jpg' %}" class="bg-img blur-up lazyload"
                                     alt="category image">
                                 <div class="category-content category-text-1">
@@ -1304,7 +1219,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="shop-left-sidebar.html" class="category-wrap category-padding">
+                            <a href="#" class="category-wrap category-padding">
                                 <img src="{% static 'images/fashion/category/3.jpg' %}" class="bg-img blur-up lazyload"
                                     alt="category image">
                                 <div class="category-content category-text-1">
@@ -1318,1136 +1233,14 @@
             </div>
         </div>
     </section>
-    <!-- category section end -->
-
-<!-- 
-    <section class="product-slider overflow-hidden">
-        <div>
-            <div class="container">
-                <div class="row g-3">
-                    <div class="col-lg-4">
-                        <div class="title-3 pb-4 title-border">
-                            <h2>Most Popular</h2>
-                            <h5 class="theme-color">Our Collection</h5>
-                        </div>
-
-                        <div class="product-slider round-arrow">
-                            <div>
-                                <div class="row g-3">
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/1.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                               
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/2.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/3.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/4.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="title-3 pb-4 title-border">
-                            <h2>Recent Popular</h2>
-                            <h5 class="theme-color">Our Collection</h5>
-                        </div>
-
-                        <div class="product-slider round-arrow">
-                            <div>
-                                <div class="row g-3">
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/1.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/2.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/3.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/4.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="title-3 pb-4 title-border">
-                            <h2>Most Popular</h2>
-                            <h5 class="theme-color">Our Collection</h5>
-                        </div>
-
-                        <div class="product-slider round-arrow">
-                            <div>
-                                <div class="row g-3">
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/1.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/2.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/3.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-6 col-12">
-                                        <div class="product-image">
-                                            <a href="product/details.html">
-                                                <img src="{% static 'images/furniture-images/product/4.jpg' %}"
-                                                    class="blur-up lazyload" alt="">
-                                            </a>
-                                            <div class="product-details">
-                                                <a href="product/details.html">
-                                                    <h6 class="font-light">Fully Confirtable</h6>
-                                                    <h3>Latest wood handle chair 7854</h3>
-                                                    <h4 class="font-light mt-1"><del>$49.00</del> <span
-                                                            class="theme-color">$35.50</span>
-                                                    </h4>
-                                                    <div class="cart-wrap">
-                                                        <ul>
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Buy">
-                                                                <a href="javascript:void(0)" class="addtocart-btn"
-                                                                    data-bs-toggle="modal" data-bs-target="#addtocart">
-                                                                    <i data-feather="shopping-cart"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Quick View">
-                                                                <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                                    data-bs-target="#quick-view">
-                                                                    <i data-feather="eye"></i>
-                                                                </a>
-                                                            </li>
-
-                                                            <li data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                title="Wishlist">
-                                                                <a href="wishlist.php" class="wishlist">
-                                                                    <i data-feather="heart"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    -->
+    
     </section>
     <style>
         .products-c .bg-size {
             background-position: center 0 !important;
         }
     </style>
-<!-- 
-    <section class="ratio_asos overflow-hidden pb-5">
-        <div class="px-0 container-fluid p-sm-0">
-            <div class="row m-0">
-                <div class="col-12 p-0">
-                    <div class="title-3 text-center">
-                        <h2>Fashion Top Deals</h2>
-                        <h5 class="theme-color">Our Collection</h5>
-                    </div>
-                </div>
 
-                <div class="our-product products-c">
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <a href="product/details.html">
-                                    <img src="{% static 'images/fashion/product/front/25.jpg' %}"
-                                        class="w-100 bg-img blur-up lazyload" alt="">
-                                </a>
-                                <div class="circle-shape"></div>
-                                <span class="background-text">Fashion</span>
-                                <div class="label-block">
-                                    <span class="label label-theme">30% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-cart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.php" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-style-3 product-style-chair">
-                                <div class="product-title d-block mb-0">
-                                    <div class="r-price">
-                                        <div class="theme-color">$21</div>
-                                        <div class="main-price">
-                                            <ul class="rating mb-1 mt-0">
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                    <a href="product/details.html" class="font-default">
-                                        <h5>Skater Multicolor Dress</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <a href="product/details.html">
-                                    <img src="{% static 'images/fashion/product/front/26.jpg' %}"
-                                        class="w-100 bg-img blur-up lazyload" alt="">
-                                </a>
-                                <div class="circle-shape"></div>
-                                <span class="background-text">Fashion</span>
-                                <div class="label-block">
-                                    <span class="label label-theme">30% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-cart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.php" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-style-3 product-style-chair">
-                                <div class="product-title d-block mb-0">
-                                    <div class="r-price">
-                                        <div class="theme-color">$21</div>
-                                        <div class="main-price">
-                                            <ul class="rating mb-1 mt-0">
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                    <a href="product/details.html" class="font-default">
-                                        <h5>Skater Multicolor Dress</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <a href="product/details.html">
-                                    <img src="{% static 'images/fashion/product/front/27.jpg' %}"
-                                        class="w-100 bg-img blur-up lazyload" alt="">
-                                </a>
-                                <div class="circle-shape"></div>
-                                <span class="background-text">Fashion</span>
-                                <div class="label-block">
-                                    <span class="label label-theme">30% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-cart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.php" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-style-3 product-style-chair">
-                                <div class="product-title d-block mb-0">
-                                    <div class="r-price">
-                                        <div class="theme-color">$21</div>
-                                        <div class="main-price">
-                                            <ul class="rating mb-1 mt-0">
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                    <a href="product/details.html" class="font-default">
-                                        <h5>Skater Multicolor Dress</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <a href="product/details.html">
-                                    <img src="{% static 'images/fashion/product/front/28.jpg' %}"
-                                        class="w-100 bg-img blur-up lazyload" alt="">
-                                </a>
-                                <div class="circle-shape"></div>
-                                <span class="background-text">Fashion</span>
-                                <div class="label-block">
-                                    <span class="label label-theme">30% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-cart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.php" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-style-3 product-style-chair">
-                                <div class="product-title d-block mb-0">
-                                    <div class="r-price">
-                                        <div class="theme-color">$21</div>
-                                        <div class="main-price">
-                                            <ul class="rating mb-1 mt-0">
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                    <a href="product/details.html" class="font-default">
-                                        <h5>Skater Multicolor Dress</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <a href="product/details.html">
-                                    <img src="{% static 'images/fashion/product/front/29.jpg' %}"
-                                        class="w-100 bg-img blur-up lazyload" alt="">
-                                </a>
-                                <div class="circle-shape"></div>
-                                <span class="background-text">Fashion</span>
-                                <div class="label-block">
-                                    <span class="label label-theme">30% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-cart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.php" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-style-3 product-style-chair">
-                                <div class="product-title d-block mb-0">
-                                    <div class="r-price">
-                                        <div class="theme-color">$21</div>
-                                        <div class="main-price">
-                                            <ul class="rating mb-1 mt-0">
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                    <a href="product/details.html" class="font-default">
-                                        <h5>Skater Multicolor Dress</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <a href="product/details.html">
-                                    <img src="{% static 'images/fashion/product/front/30.jpg' %}"
-                                        class="w-100 bg-img blur-up lazyload" alt="">
-                                </a>
-                                <div class="circle-shape"></div>
-                                <span class="background-text">Fashion</span>
-                                <div class="label-block">
-                                    <span class="label label-theme">30% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-cart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.php" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-style-3 product-style-chair">
-                                <div class="product-title d-block mb-0">
-                                    <div class="r-price">
-                                        <div class="theme-color">$21</div>
-                                        <div class="main-price">
-                                            <ul class="rating mb-1 mt-0">
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                    <a href="product/details.html" class="font-default">
-                                        <h5>Skater Multicolor Dress</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <a href="product/details.html">
-                                    <img src="{% static 'images/fashion/product/front/31.jpg' %}"
-                                        class="w-100 bg-img blur-up lazyload" alt="">
-                                </a>
-                                <div class="circle-shape"></div>
-                                <span class="background-text">Fashion</span>
-                                <div class="label-block">
-                                    <span class="label label-theme">30% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-cart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.php" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-style-3 product-style-chair">
-                                <div class="product-title d-block mb-0">
-                                    <div class="r-price">
-                                        <div class="theme-color">$21</div>
-                                        <div class="main-price">
-                                            <ul class="rating mb-1 mt-0">
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                    <a href="product/details.html" class="font-default">
-                                        <h5>Skater Multicolor Dress</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="product-box">
-                            <div class="img-wrapper">
-                                <a href="product/details.html">
-                                    <img src="{% static 'images/fashion/product/front/32.jpg' %}"
-                                        class="w-100 bg-img blur-up lazyload" alt="">
-                                </a>
-                                <div class="circle-shape"></div>
-                                <span class="background-text">Fashion</span>
-                                <div class="label-block">
-                                    <span class="label label-theme">30% Off</span>
-                                </div>
-                                <div class="cart-wrap">
-                                    <ul>
-                                        <li>
-                                            <a href="javascript:void(0)" class="addtocart-btn" data-bs-toggle="modal"
-                                                data-bs-target="#addtocart">
-                                                <i data-feather="shopping-cart"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" data-bs-toggle="modal"
-                                                data-bs-target="#quick-view">
-                                                <i data-feather="eye"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="wishlist.php" class="wishlist">
-                                                <i data-feather="heart"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-style-3 product-style-chair">
-                                <div class="product-title d-block mb-0">
-                                    <div class="r-price">
-                                        <div class="theme-color">$21</div>
-                                        <div class="main-price">
-                                            <ul class="rating mb-1 mt-0">
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star theme-color"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <p class="font-light mb-sm-2 mb-0">Multicolor Dress</p>
-                                    <a href="product/details.html" class="font-default">
-                                        <h5>Skater Multicolor Dress</h5>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <div id="qvmodal"></div>
--->
     <footer class="footer-sm-space mt-5">
         <div class="main-footer">
             <div class="container">
@@ -2455,21 +1248,21 @@
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="footer-contact">
                             <div class="brand-logo">
-                                <a href="index.htm" class="footer-logo float-start">
+                                <a href="{% url 'index' %}" class="footer-logo float-start">
                                     <img src="{% static 'images/1.png' %}" class="f-logo img-fluid blur-up lazyload image-resize"
                                         alt="logo">
                                 </a>
                             </div>
                             <ul class="contact-lists" style="clear:both;">
                                 <li>
-                                    <span><b>phone:</b> <span class="font-light"> +1 0000000000</span></span>
+                                    <span><b>phone:</b> <span class="font-light"> +212 0000000000</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Address:</b><span class="font-light"> NIT, Faridabad, Haryana,
-                                            India</span></span>
+                                    <span><b>Address:</b><span class="font-light"> Casablenca,
+                                        Morocco</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Email:</b><span class="font-light"> contact@surfsidemedia.in</span></span>
+                                    <span><b>Email:</b><span class="font-light"> contact@PrestigeUrbane.ma</span></span>
                                 </li>
                             </ul>
                         </div>

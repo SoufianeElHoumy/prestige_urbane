@@ -114,7 +114,7 @@
                         <div class="main-menu">
                             <div class="menu-left">
                                 <div class="brand-logo">
-                                    <a href="index.htm">
+                                    <a href="{% url 'index' %}">
                                         <img src="{% static 'images/1.png' %}" class="h-logo img-fluid blur-up lazyload"
                                             alt="logo">
                                     </a>
@@ -135,13 +135,12 @@
                                                     </span>
                                                 </div>
                                             </li>
-                                            <li><a href="index.htm" class="nav-link menu-title">Home</a></li>
-                                            <li><a href="shop.html" class="nav-link menu-title">Shop</a></li>
-                                            <li><a href="cart/list.html" class="nav-link menu-title">Cart</a></li>
-                                            <li><a href="about-us.html" class="nav-link menu-title">About Us</a></li>
-                                            <li><a href="contact-us.html" class="nav-link menu-title">Contact Us</a>
+                                            <li><a href="{% url 'index' %}" class="nav-link menu-title">Home</a></li>
+                                            <li><a href="{% url 'shop' %}" class="nav-link menu-title">Shop</a></li>
+                                            <li><a href="{% url 'about' %}" class="nav-link menu-title">About Us</a></li>
+                                            <li><a href="{% url 'contact' %}" class="nav-link menu-title">Contact Us</a>
                                             </li>
-                                            <li><a href="blog.html" class="nav-link menu-title">Blog</a></li>
+                                            <li><a href="{% url 'blog' %}" class="nav-link menu-title">Blog</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -268,7 +267,8 @@
     <div class="login-section">
         <div class="materialContainer">
             <div class="box">
-                <form method="POST" action="http://localhost:8000/register">
+                <form method="POST" action="{% url 'register' %}">
+                    {% csrf_token %}
                     <input type="hidden" name="_token" value="MkRqEzTGuoSx6LqJUm0OAKxSgNUYt26wTT7RMUZY">
                     <div class="login-title">
                         <h2>Register</h2>
@@ -325,8 +325,8 @@
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="footer-contact">
                             <div class="brand-logo">
-                                <a href="index.htm" class="footer-logo float-start">
-                                    <img src="{% static 'images/logo.png' %}" class="f-logo img-fluid blur-up lazyload"
+                                <a href="{% url 'index' %}" class="footer-logo float-start">
+                                    <img src="{% static 'images/1.png' %}" class="f-logo img-fluid blur-up lazyload image-resize"
                                         alt="logo">
                                 </a>
                             </div>
@@ -339,7 +339,7 @@
                                             India</span></span>
                                 </li>
                                 <li>
-                                    <span><b>Email:</b><span class="font-light"> contact@surfsidemedia.in</span></span>
+                                    <span><b>Email:</b><span class="font-light"> contact@Prestige Urbane.in</span></span>
                                 </li>
                             </ul>
                         </div>
@@ -352,19 +352,19 @@
                             <div class="footer-content">
                                 <ul>
                                     <li>
-                                        <a href="index.htm" class="font-dark">Home</a>
+                                        <a href="{% url 'index' %}" class="font-dark">Home</a>
                                     </li>
                                     <li>
-                                        <a href="shop.html" class="font-dark">Shop</a>
+                                        <a href="{% url 'shop' %}" class="font-dark">Shop</a>
                                     </li>
                                     <li>
-                                        <a href="about-us.html" class="font-dark">About Us</a>
+                                        <a href="{% url 'about' %}" class="font-dark">About Us</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="font-dark">Blog</a>
+                                        <a href="{% url 'blog' %}" class="font-dark">Blog</a>
                                     </li>
                                     <li>
-                                        <a href="contact-us.html" class="font-dark">Contact</a>
+                                        <a href="{% url 'contact' %}" class="font-dark">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -439,6 +439,7 @@
                 </div>
             </div>
         </div>
+
         <div class="sub-footer">
             <div class="container">
                 <div class="row gy-3">
@@ -479,7 +480,7 @@
             </div>
         </div>
     </div>
-</div>
+    
     </footer>
     <div class="modal fade newletter-modal" id="newsletter">
         <div class="modal-dialog modal-dialog-centered">
