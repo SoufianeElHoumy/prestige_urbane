@@ -10,6 +10,9 @@ from django.contrib import messages
 def index(request):
     return render(request, 'pages/index.html')
 
+def landingpage(request):
+    return render(request, 'pages/landingpage.html')
+
 def about(request):
     return render(request, 'pages/about-us.html')
 

@@ -34,4 +34,5 @@ urlpatterns = [
     path('shop/', views.shop, name='shop'),
     path('category/<str:category>/', views.category, name='category'),
     path('wishlist/', views.wishlist, name='wishlist'),
+    path('landingpage/', views.landingpage, name='landingpage'),
 ]
