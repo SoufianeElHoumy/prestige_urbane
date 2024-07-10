@@ -2,27 +2,27 @@
 <html lang="en">
 
 <head>
-    {% load static %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{% csrf_token %}">
-    <link rel="manifest" href="{% static 'manifest.json' %}">
-    <link rel="apple-touch-icon" href="c'images/favicon.ico' %}">
-    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
-    <meta name="theme-color" content="#e87316">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Surfside Media">
-    <meta name="msapplication-TileImage" content="{% static 'images/favicon.ico' %}">
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Surfside Media">
-    <meta name="keywords" content="Surfside Media">
-    <meta name="author" content="Surfside Media">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    {% load static %} <!-- Load static files -->
+    <meta charset="utf-8"> <!-- Define character set -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Make site responsive -->
+    <link rel="manifest" href="{% static 'manifest.js' %}"> <!-- Link to manifest file -->
+    <link rel="apple-touch-icon" href="{% static 'images/favicon.ico' %}"> <!-- Link to favicon for Apple devices -->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"> <!-- Link to favicon -->
+    <meta name="theme-color" content="#e87316"> <!-- Define theme color -->
+    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- Enable standalone mode for iOS -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> <!-- Define status bar style for iOS -->
+    <meta name="apple-mobile-web-app-title" content="Surfside Media"> <!-- Define web app title for iOS -->
+    <meta name="msapplication-TileImage" content="{% static 'images/favicon.ico' %}"> <!-- Define tile image for Windows -->
+    <meta name="msapplication-TileColor" content="#FFFFFF"> <!-- Define tile color for Windows -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Enable IE compatibility mode -->
+    <meta name="description" content="Surfside Media"> <!-- Define site description -->
+    <meta name="keywords" content="Surfside Media"> <!-- Define site keywords -->
+    <meta name="author" content="Surfside Media"> <!-- Define site author -->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- Preconnect to font host -->
 
-    <title>Prestige Urbane</title>
+    <title>Prestige Urbane</title> <!-- Define site title -->
 
+    <!-- Link to various CSS files -->
     <link id="rtl-link" rel="stylesheet" type="text/css" href="{% static 'css/vendors/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/vendors/ion.rangeSlider.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/vendors/font-awesome.css' %}">
@@ -114,7 +114,7 @@
                         <div class="main-menu">
                             <div class="menu-left">
                                 <div class="brand-logo">
-                                    <a href="{% url 'index' %}">
+                                    <a href="{% url 'landingpage' %}">
                                         <img src="{% static 'images/1.png' %}" class="h-logo img-fluid blur-up lazyload"
                                             alt="logo">
                                     </a>
@@ -138,9 +138,7 @@
                                             <li><a href="{% url 'index' %}" class="nav-link menu-title">Home</a></li>
                                             <li><a href="{% url 'shop' %}" class="nav-link menu-title">Shop</a></li>
                                             <li><a href="{% url 'about' %}" class="nav-link menu-title">About Us</a></li>
-                                            <li><a href="{% url 'contact' %}" class="nav-link menu-title">Contact Us</a>
-                                            </li>
-                                            <li><a href="{% url 'blog' %}" class="nav-link menu-title">Blog</a></li>
+                                            <li><a href="{% url 'contact' %}" class="nav-link menu-title">Contact Us</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -359,9 +357,6 @@
                                     </li>
                                     <li>
                                         <a href="{% url 'about' %}" class="font-dark">About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'blog' %}" class="font-dark">Blog</a>
                                     </li>
                                     <li>
                                         <a href="{% url 'contact' %}" class="font-dark">Contact</a>

@@ -1,44 +1,94 @@
-# Prestige Urban
+# Prestige Urbane
 
-Welcome to Prestige Urban, a website project where users can buy clothes online. This project is part of my coursework as a software engineering student.
+![alt text](prestige_urbane\static\images\PrestigeUrbane.png)
 
-## Project Overview
+## Introduction
 
-Prestige Urban is designed to provide a seamless shopping experience for users. The website includes features such as:
+Prestige Urbane is a web application designed to elevate your fashion shopping experience. Our platform allows users to browse and select from a curated collection of contemporary urban clothing, ensuring a seamless and stylish shopping journey.
 
-- **User Authentication**: Sign up and log in functionality.
-- **Product Catalog**: Browse a wide range of clothing items.
-- **Shopping Cart**: Add items to your cart and proceed to checkout.
-- **Order Management**: Track orders and view order history.
-- **Responsive Design**: Optimized for both desktop and mobile devices.
+## Authors
+Soufiane El Houmy - [Github](https://github.com/SoufianeElHoumy) / [Twitter](https://twitter.com/ElHoumySoufiane)   / [linkedin](https://www.linkedin.com/in/soufiane-el-houmy-2692a6288/)
 
-## Technologies Used
+Oussama EL GUENNOUNI - [Github](https://github.com/Ousskira) / [Twitter](https://twitter.com/OussamaELG2709)   / [linkedin](https://www.linkedin.com/in/oussama-el-guennouniouni-5657461b6)
 
-- **Front-end**: HTML, CSS, JavaScript, React
-- **Back-end**: Node.js, Express
-- **Database**: MongoDB
-- **Version Control**: Git
-- **Hosting**: [Your hosting service, if applicable]
+Reda Adjar - [Github](https://github.com/MrBoodj011) / [Twitter](https://x.com/adjar_reda5)   / [linkedin](https://www.linkedin.com/in/redaadjar/)
 
-## Privacy and Security Concerns
+## Installation
 
-Before pushing the project to GitHub, it's essential to address some security and privacy concerns:
+To run this project locally, follow these steps:
 
-1. **Environment Variables**: Ensure that sensitive information (e.g., API keys, database credentials) is not hard-coded into your project. Use environment variables and a `.env` file to manage these securely.
-
-2. **`.gitignore` File**: Create a `.gitignore` file to exclude sensitive files and directories from being tracked by Git. Common entries include:
-
-    ```plaintext
-    node_modules/
-    .env
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/SoufianeElHoumy/prestige_urbane.git
+    cd prestige_urbane
     ```
 
-3. **API Security**: Review your API endpoints to ensure they are secure and do not expose sensitive data.
+2. Create a virtual environment:
+    ```bash
+    cd prestige_urbane
+    python -m venv env
+    source env/bin/activate   # On Windows, use `env\Scripts\activate`
+    ```
 
-**Note**: We have not yet pushed the project to GitHub because we are currently securing our private data and ensuring the overall security of the project.
+3. Install the dependencies:
+    ```bash
+    pip install -r requirements.txt
+    pip install django
+    ```
 
-## Future Enhancements
+4. Configure your SQLite database in `settings.py`:
 
-- **Payment Integration**: Add secure payment processing using a service like Stripe or PayPal.
-- **Enhanced User Profiles**: Allow users to save their favorite items and set preferences.
-- **Search and Filter**: Implement advanced search and filtering options for the product catalog.
+    ```python
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+    }
+    ```
+
+5. Apply migrations:
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+
+6. Run the development server:
+    ```bash
+    python manage.py runserver
+    ```
+
+7. Open your browser and navigate to `http://127.0.0.1:8000/`.
+
+## Usage
+
+1. Register for an account or log in if you already have one.
+2. Browse the available products.
+3. Add desired products to your cart.
+4. Proceed to checkout to place your order for pickup at the grocery store.
+
+## Contributing
+
+We welcome contributions to the Prestige Urbane project. To contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+    ```bash
+    git checkout -b feature-name
+    ```
+3. Make your changes and commit them with descriptive messages:
+    ```bash
+    git commit -m "Description of the feature"
+    ```
+4. Push your changes to your forked repository:
+    ```bash
+    git push origin feature-name
+    ```
+5. Open a pull request with a detailed description of your changes.
+
+## Related Projects
+
+- [Prestige Urbane Landing Page](https://github.com/SoufianeElHoumy/Prestige_Urban_LandingPage)
+
+## Prestige Urbane Logo
+![Prestige Urbane Logo](static/images/1.png)

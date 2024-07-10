@@ -16,9 +16,6 @@ def landingpage(request):
 def about(request):
     return render(request, 'pages/about-us.html')
 
-def blog(request):
-    return render(request, 'pages/blog.html')
-
 def checkout(request):
     return render(request, 'pages/checkout.html')
 
