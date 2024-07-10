@@ -1,6 +1,6 @@
 # Prestige Urbane
 
-![alt text](prestige_urbane\static\images\PrestigeUrbane.png)
+![prestige Urbane](https://github.com/SoufianeElHoumy/prestige_urbane/assets/142119581/054c7dd6-f0c4-4007-bc09-65b3df75058d)
 
 ## Introduction
 
